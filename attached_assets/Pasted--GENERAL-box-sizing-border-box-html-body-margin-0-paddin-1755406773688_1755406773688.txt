@@ -1,0 +1,113 @@
+/* ===== GENERAL ===== */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #2196f3, #21cbf3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+body > section {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ===== ENTRADAS ===== */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ===== BOTONES ===== */
+button {
+  width: 100%;
+  background-color: #ffeb3b;
+  color: #333;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #fdd835;
+}
+
+/* ===== VENTANAS MODALES (ayuda, contrato) ===== */
+#ventanaAyuda,
+#ventanaContrato {
+  background-color: #fff;
+  color: #000;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  text-align: left;
+}
+
+
+#ventanaContrato p, #ventanaAyuda p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ===== TÍTULOS ===== */
+h2, h3 {
+  margin-top: 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+/* ===== pantallas pequeñas ===== */
+@media (max-width: 600px) {
+  input, select, button {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  h2, h3 {
+    font-size: 20px;
+  }
+
+  #ventanaContrato {
+    width: 95%;
+    max-height: 80vh;
+  }
+}
+
+

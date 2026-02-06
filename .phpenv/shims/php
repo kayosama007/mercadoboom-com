@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -e
+[ -n "$PHPENV_DEBUG" ] && set -x
+
+program="${0##*/}"
+if [ "$program" = "php" ]; then
+  for arg; do
+    case "$arg" in
+    -e* | -- ) break ;;
+    */* )
+      if [ -f "$arg" ]; then
+        export PHPENV_DIR="${arg%/*}"
+        break
+      fi
+      ;;
+    esac
+  done
+fi
+
+export PHPENV_ROOT="/var/www/vhosts/mercadoboom.com/.phpenv"
+exec "/opt/plesk/phpenv/libexec/phpenv" exec "$program" "$@"
